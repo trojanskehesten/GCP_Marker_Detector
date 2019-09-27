@@ -3,19 +3,15 @@ close all;
 %clear all;
 clc;
 
-
-
 %% Read Images
 %I1 = imread('0.jpg');
 figure; imshow(I1); title('Object of searching');
 %I2 = imread('1.jpg');
 figure; imshow(I2); title('Scene');
 
-
 %% Detect Features
 points1 = detectSURFFeatures(rgb2gray(I1));
 points2 = detectSURFFeatures(rgb2gray(I2));
-
 
 %% Extraxt Features
 [feats1, validpts1] = extractFeatures(rgb2gray(I1), points1);
@@ -52,6 +48,3 @@ figure; imsgow(I2);
 hold on;
 line(newBoxPolygon(:, 1), newBoxPolygon(:, 2), 'Color', 'q', 'LineWidth', 5);
 title('Detected objects');
-
-
-
